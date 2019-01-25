@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<web-app id="WebApp_ID" version="3.1"
+	xmlns:xsi="w3.org/2001/XMLSchema-instance"
+	xmlns="xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="xmlns.jcp.org/xml/ns/javaee
+	xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	
+	<display-name>Restful Web Application</display-name>
+	
+	<!-- this need same with resteasy servlet url-pattern -->
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/rest</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>resteasy.resources</param-name>
+		<param-value>rest.QueuesREST,rest.PartiesREST,rest.UsersREST,rest.PlayerREST</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>sql.SQLUtils</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>
+			org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+		</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+		</servlet-class>
+	</servlet>
+     
+	<servlet-mapping>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
