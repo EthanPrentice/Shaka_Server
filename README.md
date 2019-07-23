@@ -4,7 +4,7 @@ Jul-2019 - Not happy with current implementation.
 
 
 **I've learned a lot in past year and there are many areas I can improve this, especially design-wise.  
-I will be deprecating this and starting writing a C++ API late Jul-2019 instead to practice / demonstrate knowledge of architecture, design patterns, and pointers/object ownership in a personal project.**
+I will be deprecating this and start building (from the ground-up) a C++ API for this project in late Jul-2019 to practice / demonstrate knowledge of architecture, design patterns, and pointers/object ownership in a personal project.**
 
 
 # TODO
